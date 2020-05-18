@@ -1,0 +1,27 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.6.1'
+    implementation 'org.aspectj:aspectjtools:1.9.1'
+    implementation 'org.aspectj:aspectjrt:1.9.1'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            pom.groupId = 'com.snail.aop'
+            pom.artifactId = 'aop_plugin'
+            pom.version = '1.0.0'
+            repository(url: uri('../snail_aop_plugin'))
+
+        }
+    }
+}
