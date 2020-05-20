@@ -9,9 +9,6 @@ buildscript {
     
     repositories {
         google()
-            maven {
-                url uri('snail_aop_plugin')
-            }
         jcenter()
 
     }
